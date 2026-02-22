@@ -957,104 +957,69 @@ button {
     line-height: 1.55
 }
 
-/* Tablet — icon-only sidebar */
+/* Tablet & Mobile — top header + bottom nav */
 @media(max-width:1024px) {
     .sidebar {
-        width: 60px;
-        padding: 16px 0
-    }
-
-    .brand span,
-    .tagline,
-    .tab span:not(.badge),
-    .side-foot {
-        display: none
-    }
-
-    .brand {
-        justify-content: center;
-        padding: 0 0 20px
-    }
-
-    .tab {
-        justify-content: center;
-        padding: 12px
-    }
-
-    .badge {
-        margin-left: 0;
-        position: absolute;
-        top: 4px;
-        right: 4px;
-        min-width: 16px;
-        height: 16px;
-        font-size: 9px;
-        padding: 0 4px
-    }
-
-    .content {
-        margin-left: 60px
-    }
-
-    .view {
-        padding: 32px 28px 48px
-    }
-}
-
-/* Mobile — bottom nav bar */
-@media(max-width:768px) {
-    .sidebar {
         position: fixed;
-        top: auto;
+        top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
+        bottom: auto;
         width: 100%;
-        height: 60px;
-        flex-direction: row;
-        align-items: center;
-        padding: 0 8px;
+        height: auto;
+        flex-direction: column;
+        padding: 14px 20px 12px;
         border-right: none;
-        border-top: 1px solid var(--bdr);
+        border-bottom: 1px solid var(--bdr);
         z-index: 100;
         background: var(--bg2);
-        backdrop-filter: blur(20px)
+        overflow: visible
     }
 
     .brand {
-        padding: 0 8px;
-        gap: 6px;
-        font-size: 15px
-    }
-
-    .tagline,
-    .side-foot {
-        display: none
+        padding: 0;
+        gap: 8px;
+        font-size: 17px
     }
 
     .brand span {
         display: inline
     }
 
+    .tagline {
+        display: block;
+        margin: 8px 0 0;
+        padding: 6px 10px;
+        font-size: 10px;
+        line-height: 1.4
+    }
+
+    .side-foot {
+        display: none
+    }
+
+    /* Nav tabs → fixed bottom bar */
     .nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
         flex-direction: row;
         gap: 4px;
-        padding: 0;
-        flex: 1;
-        justify-content: flex-end
+        padding: 8px 12px;
+        background: rgba(17, 18, 25, .95);
+        backdrop-filter: blur(20px);
+        border-top: 1px solid var(--bdr);
+        z-index: 100
     }
 
     .tab {
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-size: 12px;
-        gap: 6px;
-        justify-content: center
-    }
-
-    .tab svg {
-        width: 16px;
-        height: 16px
+        flex: 1;
+        justify-content: center;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-size: 13px;
+        gap: 8px
     }
 
     .tab span:not(.badge) {
@@ -1068,8 +1033,8 @@ button {
     .badge {
         margin-left: 0;
         position: absolute;
-        top: -2px;
-        right: -2px;
+        top: 2px;
+        right: 2px;
         min-width: 16px;
         height: 16px;
         font-size: 9px;
@@ -1078,21 +1043,44 @@ button {
 
     .content {
         margin-left: 0;
-        padding-bottom: 80px
+        padding-top: 90px;
+        padding-bottom: 70px
     }
 
     .view {
-        padding: 24px 16px 40px;
+        padding: 24px 28px 40px;
         max-width: 100%
+    }
+}
+
+/* Mobile tweaks */
+@media(max-width:768px) {
+    .sidebar {
+        padding: 14px 16px 12px
+    }
+
+    .brand {
+        font-size: 15px;
+        gap: 6px
+    }
+
+    .tagline {
+        font-size: 9.5px;
+        margin: 6px 0 0;
+        padding: 5px 8px
     }
 
     .v-head {
         flex-direction: column;
-        gap: 12px
+        gap: 10px
     }
 
     .v-head h1 {
         font-size: 20px
+    }
+
+    .view {
+        padding: 20px 16px 36px
     }
 
     .zone {
@@ -1161,7 +1149,7 @@ button {
     }
 }
 
-/* Small phones — stack grid, hide tab labels */
+/* Small phones — stack upload grid, icon-only tabs */
 @media(max-width:500px) {
     .grid {
         grid-template-columns: 1fr;
@@ -1171,11 +1159,21 @@ button {
     .tab span:not(.badge) {
         display: none
     }
+
+    .tab {
+        padding: 10px;
+        gap: 0
+    }
+
+    .tagline {
+        font-size: 9px
+    }
 }
 
+/* Tiny screens */
 @media(max-width:400px) {
     .view {
-        padding: 16px 12px 36px
+        padding: 14px 12px 32px
     }
 
     .card {
