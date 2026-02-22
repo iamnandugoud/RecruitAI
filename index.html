@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="RecruitAI — AI-powered resume screening with candidate history tracking.">
     <title>RecruitAI — Intelligent Resume Screener</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +18,10 @@
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
     </div>
+
     <aside class="sidebar">
-        <div class="brand"><svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+        <div class="brand">
+            <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
                 <rect x="2" y="2" width="24" height="24" rx="6" stroke="url(#lg)" stroke-width="2.5" />
                 <path d="M9 14L12.5 17.5L19 10" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round"
                     stroke-linejoin="round" />
@@ -29,29 +31,39 @@
                         <stop offset="1" stop-color="#8B5CF6" />
                     </linearGradient>
                 </defs>
-            </svg><span>Recruit<span class="accent">AI</span></span></div>
+            </svg>
+            <span>Recruit<span class="accent">AI</span></span>
+        </div>
         <p class="tagline">Your Most Reliable Colleague — Proudly 100% Friday Evening Assignment-Free</p>
         <nav class="nav">
-            <button class="tab active" data-tab="screen"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <button class="tab active" data-tab="screen">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor"
                         stroke-width="1.5" />
                     <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="1.5" />
                     <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="1.5" />
                     <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="1.5" />
-                </svg>Screen Candidate</button>
-            <button class="tab" data-tab="history"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                </svg>
+                <span>Screen Candidate</span>
+            </button>
+            <button class="tab" data-tab="history">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
                     <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="1.5"
                         stroke-linecap="round" />
-                </svg>Candidate History<span class="badge" id="hist-count">0</span></button>
+                </svg>
+                <span>Candidate History</span><span class="badge" id="hist-count">0</span>
+            </button>
         </nav>
         <div class="side-foot">
-            <div class="conn" id="conn"><span class="dot checking" id="dot"></span><span class="conn-lbl"
-                    id="conn-lbl">Checking n8n…</span></div>
+            <div class="conn"><span class="dot checking" id="dot"></span><span class="conn-lbl" id="conn-lbl">Checking
+                    n8n…</span></div>
             <div class="credit">Built with n8n + Gemini AI</div>
         </div>
     </aside>
+
     <main class="content">
+        <!-- Screen View -->
         <section class="view active" id="view-screen">
             <div class="v-head">
                 <h1>Screen a Candidate</h1>
@@ -60,40 +72,50 @@
             <div class="card">
                 <form id="form">
                     <div class="grid">
-                        <div class="zone" id="z-jd"><input type="file" id="f-jd" accept=".pdf" hidden>
-                            <div class="zone-ph" id="ph-jd"><svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                        <div class="zone" id="z-jd">
+                            <input type="file" id="f-jd" accept=".pdf" hidden>
+                            <div class="zone-ph" id="ph-jd">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                                     <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"
                                         stroke="currentColor" stroke-width="1.5" />
                                     <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="1.5" />
-                                </svg><strong>Job Description</strong><span>Drop PDF or <em>browse</em></span></div>
-                            <div class="zone-ok" id="ok-jd" hidden><svg width="18" height="18" viewBox="0 0 24 24"
-                                    fill="none">
+                                </svg>
+                                <strong>Job Description</strong><span>Drop PDF or <em>browse</em></span>
+                            </div>
+                            <div class="zone-ok" id="ok-jd" hidden>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                                     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" />
                                     <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
-                                </svg><span id="n-jd"></span><button type="button" class="x" id="x-jd">&times;</button>
+                                </svg>
+                                <span id="n-jd"></span><button type="button" class="x" id="x-jd">&times;</button>
                             </div>
                         </div>
-                        <div class="zone" id="z-res"><input type="file" id="f-res" accept=".pdf" hidden>
-                            <div class="zone-ph" id="ph-res"><svg width="32" height="32" viewBox="0 0 24 24"
-                                    fill="none">
+                        <div class="zone" id="z-res">
+                            <input type="file" id="f-res" accept=".pdf" hidden>
+                            <div class="zone-ph" id="ph-res">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                                     <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5" />
                                     <path d="M6 21v-1a6 6 0 0112 0v1" stroke="currentColor" stroke-width="1.5" />
                                     <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor"
                                         stroke-width="1.5" />
-                                </svg><strong>Candidate Resume</strong><span>Drop PDF or <em>browse</em></span></div>
-                            <div class="zone-ok" id="ok-res" hidden><svg width="18" height="18" viewBox="0 0 24 24"
-                                    fill="none">
+                                </svg>
+                                <strong>Candidate Resume</strong><span>Drop PDF or <em>browse</em></span>
+                            </div>
+                            <div class="zone-ok" id="ok-res" hidden>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                                     <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" />
                                     <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
-                                </svg><span id="n-res"></span><button type="button" class="x"
-                                    id="x-res">&times;</button></div>
+                                </svg>
+                                <span id="n-res"></span><button type="button" class="x" id="x-res">&times;</button>
+                            </div>
                         </div>
                     </div>
-                    <button type="submit" class="submit" id="submit" disabled><span id="s-txt">Analyze
-                            Candidate</span><span id="s-load" hidden><span
-                                class="spin"></span>Analyzing…</span></button>
+                    <button type="submit" class="submit" id="submit" disabled>
+                        <span id="s-txt">Analyze Candidate</span>
+                        <span id="s-load" hidden><span class="spin"></span>Analyzing…</span>
+                    </button>
                 </form>
             </div>
             <div class="card" id="results" hidden>
@@ -101,7 +123,8 @@
                     <h2>Screening Results</h2><button class="ghost" id="btn-new">↻ New Screening</button>
                 </div>
                 <div class="r-body">
-                    <div class="gauge"><svg viewBox="0 0 120 120">
+                    <div class="gauge">
+                        <svg viewBox="0 0 120 120">
                             <circle class="g-bg" cx="60" cy="60" r="52" />
                             <circle class="g-fill" id="g-fill" cx="60" cy="60" r="52" stroke-dasharray="326.73"
                                 stroke-dashoffset="326.73" />
@@ -137,13 +160,16 @@
                 </div>
                 <button class="submit draft-send" id="btn-send-draft"><span id="send-txt">📤 Send Email</span><span
                         id="send-load" hidden><span class="spin"></span>Sending…</span></button>
-                <div class="draft-sent" id="draft-sent" hidden><svg width="20" height="20" viewBox="0 0 24 24"
-                        fill="none">
+                <div class="draft-sent" id="draft-sent" hidden>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                         <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
-                    </svg><span id="draft-sent-msg">Email sent successfully via n8n → Gmail</span></div>
+                    </svg>
+                    <span id="draft-sent-msg">Email sent successfully via n8n → Gmail</span>
+                </div>
             </div>
-            <div class="card err" id="err" hidden><svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+            <div class="card err" id="err" hidden>
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
                     <line x1="15" y1="9" x2="9" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     <line x1="9" y1="9" x2="15" y2="15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -151,14 +177,18 @@
                 <p id="err-msg">Something went wrong.</p><button class="ghost" id="btn-retry">Try Again</button>
             </div>
         </section>
+
+        <!-- History View -->
         <section class="view" id="view-history">
             <div class="v-head">
                 <div>
                     <h1>Candidate History</h1>
                     <p class="sub">All previously screened candidates are listed below.</p>
-                </div><button class="ghost danger" id="btn-clear">Clear All</button>
+                </div>
+                <button class="ghost danger" id="btn-clear">Clear All</button>
             </div>
-            <div class="hist-empty" id="hist-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+            <div class="hist-empty" id="hist-empty">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
                     <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
                     <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="1.5"
                         stroke-linecap="round" />
@@ -168,7 +198,8 @@
             <div class="hist-list" id="hist-list"></div>
         </section>
     </main>
-    <script src="app.js"></script>
+
+    <script src="app.js" defer></script>
 </body>
 
 </html>

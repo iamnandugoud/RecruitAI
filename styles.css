@@ -52,6 +52,7 @@ button {
     background: none
 }
 
+/* Ambient Background */
 .ambient-bg {
     position: fixed;
     inset: 0;
@@ -109,6 +110,7 @@ button {
     }
 }
 
+/* Sidebar */
 .sidebar {
     position: fixed;
     top: 0;
@@ -154,6 +156,7 @@ button {
     text-shadow: 0 0 20px rgba(167, 139, 250, .3)
 }
 
+/* Navigation */
 .nav {
     flex: 1;
     display: flex;
@@ -229,6 +232,7 @@ button {
     color: #fff
 }
 
+/* Sidebar Footer */
 .side-foot {
     padding: 16px 20px;
     border-top: 1px solid var(--bdr)
@@ -309,6 +313,7 @@ button {
     color: var(--t3)
 }
 
+/* Content Area */
 .content {
     margin-left: var(--sb);
     min-height: 100vh;
@@ -339,6 +344,7 @@ button {
     }
 }
 
+/* View Header */
 .v-head {
     margin-bottom: 28px;
     display: flex;
@@ -359,6 +365,7 @@ button {
     margin-top: 4px
 }
 
+/* Cards */
 .card {
     background: var(--card);
     border: 1px solid var(--bdr);
@@ -368,6 +375,7 @@ button {
     margin-bottom: 20px
 }
 
+/* Upload Grid */
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -452,6 +460,7 @@ button {
     background: rgba(248, 113, 113, .1)
 }
 
+/* Submit Button */
 .submit {
     width: 100%;
     padding: 14px;
@@ -496,6 +505,7 @@ button {
     }
 }
 
+/* Ghost Button */
 .ghost {
     display: inline-flex;
     align-items: center;
@@ -525,6 +535,7 @@ button {
     border-color: var(--red)
 }
 
+/* Results */
 .r-top {
     display: flex;
     align-items: center;
@@ -543,6 +554,7 @@ button {
     gap: 20px
 }
 
+/* Score Gauge */
 .gauge {
     display: flex;
     align-items: center;
@@ -596,6 +608,7 @@ button {
     margin-top: 2px
 }
 
+/* Info Rows */
 .info {
     display: flex;
     flex-direction: column;
@@ -641,6 +654,7 @@ button {
     line-height: 1.55
 }
 
+/* Tags */
 .tag {
     display: inline-block;
     padding: 3px 10px;
@@ -669,6 +683,7 @@ button {
     border: 1px solid rgba(248, 113, 113, .2)
 }
 
+/* Action Bar */
 .act {
     display: flex;
     align-items: center;
@@ -690,6 +705,7 @@ button {
     font-size: 20px
 }
 
+/* Email Draft */
 .draft {
     transition: opacity .4s ease, transform .4s ease
 }
@@ -785,6 +801,7 @@ button {
     gap: 8px
 }
 
+/* Error */
 .err {
     text-align: center;
     color: var(--red)
@@ -796,6 +813,7 @@ button {
     margin: 12px 0 20px
 }
 
+/* History */
 .hist-empty {
     text-align: center;
     padding: 60px 20px;
@@ -825,6 +843,7 @@ button {
     gap: 10px
 }
 
+/* History Items */
 .h-item {
     padding: 16px 18px;
     background: var(--card);
@@ -957,6 +976,8 @@ button {
     line-height: 1.55
 }
 
+/* ═══ Responsive ═══ */
+
 /* Tablet & Mobile — top header + bottom nav */
 @media(max-width:1024px) {
     .sidebar {
@@ -998,7 +1019,6 @@ button {
         display: none
     }
 
-    /* Nav tabs → fixed bottom bar */
     .nav {
         position: fixed;
         bottom: 0;
@@ -1053,7 +1073,7 @@ button {
     }
 }
 
-/* Mobile tweaks */
+/* Mobile */
 @media(max-width:768px) {
     .sidebar {
         padding: 14px 16px 12px
@@ -1149,7 +1169,7 @@ button {
     }
 }
 
-/* Small phones — stack upload grid, icon-only tabs */
+/* Small phones */
 @media(max-width:500px) {
     .grid {
         grid-template-columns: 1fr;
