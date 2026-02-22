@@ -1027,10 +1027,13 @@ button {
         font-size: 15px
     }
 
-    .brand span,
     .tagline,
     .side-foot {
         display: none
+    }
+
+    .brand span {
+        display: inline
     }
 
     .nav {
