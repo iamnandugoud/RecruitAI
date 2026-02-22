@@ -957,7 +957,8 @@ button {
     line-height: 1.55
 }
 
-@media(max-width:768px) {
+/* Tablet — icon-only sidebar */
+@media(max-width:1024px) {
     .sidebar {
         width: 60px;
         padding: 16px 0
@@ -996,24 +997,207 @@ button {
     }
 
     .view {
-        padding: 24px 20px 40px
+        padding: 32px 28px 48px
     }
 }
 
-@media(max-width:600px) {
-    .grid {
-        grid-template-columns: 1fr
+/* Mobile — bottom nav bar */
+@media(max-width:768px) {
+    .sidebar {
+        position: fixed;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 8px;
+        border-right: none;
+        border-top: 1px solid var(--bdr);
+        z-index: 100;
+        background: var(--bg2);
+        backdrop-filter: blur(20px)
     }
 
-    .r-body {
-        grid-template-columns: 1fr
+    .brand {
+        padding: 0 8px;
+        gap: 6px;
+        font-size: 15px
+    }
+
+    .brand span,
+    .tagline,
+    .side-foot {
+        display: none
+    }
+
+    .nav {
+        flex-direction: row;
+        gap: 4px;
+        padding: 0;
+        flex: 1;
+        justify-content: flex-end
+    }
+
+    .tab {
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 12px;
+        gap: 6px;
+        justify-content: center
+    }
+
+    .tab svg {
+        width: 16px;
+        height: 16px
+    }
+
+    .tab span:not(.badge) {
+        display: inline
+    }
+
+    .tab.active::before {
+        display: none
+    }
+
+    .badge {
+        margin-left: 0;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        min-width: 16px;
+        height: 16px;
+        font-size: 9px;
+        padding: 0 4px
+    }
+
+    .content {
+        margin-left: 0;
+        padding-bottom: 80px
+    }
+
+    .view {
+        padding: 24px 16px 40px;
+        max-width: 100%
     }
 
     .v-head {
-        flex-direction: column
+        flex-direction: column;
+        gap: 12px
+    }
+
+    .v-head h1 {
+        font-size: 20px
+    }
+
+    .zone {
+        min-height: 100px;
+        padding: 20px 14px
+    }
+
+    .r-body {
+        grid-template-columns: 1fr;
+        gap: 16px
+    }
+
+    .gauge {
+        width: 100px;
+        height: 100px
+    }
+
+    .g-num {
+        font-size: 28px
     }
 
     .card {
-        padding: 20px
+        padding: 18px;
+        border-radius: 12px;
+        margin-bottom: 14px
+    }
+
+    .r-top {
+        margin-bottom: 16px
+    }
+
+    .r-top h2 {
+        font-size: 16px
+    }
+
+    .row {
+        flex-wrap: wrap
+    }
+
+    .act {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px
+    }
+
+    .draft-textarea {
+        min-height: 100px
+    }
+
+    .h-row {
+        gap: 10px
+    }
+
+    .h-score {
+        width: 36px;
+        height: 36px;
+        font-size: 13px
+    }
+
+    .h-summary {
+        padding: 0 0 0 46px
+    }
+
+    .h-item.open .h-summary {
+        padding: 10px 0 4px 46px
+    }
+}
+
+/* Small phones — stack grid, hide tab labels */
+@media(max-width:500px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 10px
+    }
+
+    .tab span:not(.badge) {
+        display: none
+    }
+}
+
+@media(max-width:400px) {
+    .view {
+        padding: 16px 12px 36px
+    }
+
+    .card {
+        padding: 14px
+    }
+
+    .v-head h1 {
+        font-size: 18px
+    }
+
+    .sub {
+        font-size: 12px
+    }
+
+    .zone-ph strong {
+        font-size: 13px
+    }
+
+    .submit {
+        padding: 12px;
+        font-size: 13px
+    }
+
+    .ghost {
+        padding: 5px 10px;
+        font-size: 11px
     }
 }
